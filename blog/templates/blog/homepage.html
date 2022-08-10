@@ -1,0 +1,36 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+
+
+
+              <div class="col-lg-8 col-md-10 mx-auto">
+                    
+                    {% for blog in blogs %}
+                    <!-- Post preview-->
+                    <div class="post-preview">
+                       
+                       
+                            <h2 class="post-title">{{ blog.title }}</h2>
+                            <p>{{ blog.content }}</p>
+                      
+                       
+                       
+                        <p class="post-meta">
+                            Posted by
+                            <a href="#!">{{ blog.author.username }}</a>
+                            on {{ blog.post_created }}
+                        </p>
+                    </div>
+                    <!-- Divider-->
+                    <hr class="my-4" />
+                  
+                  
+                  {% endfor %}
+                  
+                    </div>
+                    
+
+{% endblock content %}
+
+
+ 
