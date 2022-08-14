@@ -1,0 +1,45 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+
+
+
+              <div class="col-lg-8 col-md-10 mx-auto">
+                    
+                 
+                    <!-- Post preview-->
+                    <div class="post-preview">
+                       
+                       
+                            <h2 class="post-title">
+                                
+                             {{ blog.title }}
+                                </h2>
+                           
+                           
+                           
+                           
+                            <p>
+                                {{ blog.content }}
+                            </p>
+                      
+                       
+                       
+                        <p class="post-meta">
+                            Posted by
+                            <a href="#!">{{ blog.author.username }}</a>
+                            on: {{ blog.post_created }}
+                           {% if blog.author == user %} 
+                        </p>
+                      <div>
+                    <a href="{% url 'blog-post-update' blog.id %}">UpdatePost</a>/
+                    <a href="{% url 'blog-post-delete' blog.id %}">Delete</a>
+        
+                     </div>
+                   {% endif %}
+                   
+                    </div>
+                 
+                    </div>
+                    
+
+{% endblock content %}
