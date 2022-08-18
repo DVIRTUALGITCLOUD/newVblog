@@ -2,7 +2,9 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from .forms import UserRegistrationForm, UserProfileForm, ProfilePictureForm
 from django.contrib import messages
-
+from django.contrib.auth.models import User
+from django.contrib.auth.views import PasswordChangeView
+from django.urls import reverse_lazy
 
 def register(request):
     if request.method == 'POST':
@@ -36,3 +38,10 @@ def profile(request):
         profile_picture_form = ProfilePictureForm(instance=request.user)
     return render(request, 'users/profile.html',
                   {'user_form': user_form, 'profile_picture_form': profile_picture_form})
+
+
+
+class UserPasswordChangeView(PasswordChangeView):
+    model = User
+    template_name = 'users/password_change_form.html'
+    success_url = reverse_lazy('users-profile')
