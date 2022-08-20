@@ -78,7 +78,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'django',
         'USER': 'dbmasteruser',
-        'PASSWORD': 'ckSwNtYfW00n=m,IB*)GU34ow[6NmXL)',
+        'PASSWORD': 'pispuser',
         'HOST': 'ls-2c19aef538b7914599d0412be9c31e84e34c493d.cs1uorlsa2xx.us-east-1.rds.amazonaws.com',
         'PORT': '3306',
        
@@ -159,11 +159,14 @@ EMAIL_HOST_USER = env('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
 
 
+
+
+
 # # Amazons S3 Bucket settings
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 STATICFILES_STORAGE = 'storages.backends.s3boto3.S3StaticStorage'
-AWS_ACCESS_KEY_ID = os.environ.get('AKIAYFZLZWB5L3PMPW4L')
-AWS_SECRET_ACCESS_KEY = os.environ.get('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')
+AWS_ACCESS_KEY_ID = ('AKIAYFZLZWB5L3PMPW4L')
+AWS_SECRET_ACCESS_KEY = ('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')
 AWS_STORAGE_BUCKET_NAME = 'bucket-er49gp'
 AWS_QUERYSTRING_AUTH = False
 
